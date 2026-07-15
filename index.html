@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sara’s Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(135deg, rgb(4, 4, 52) 0%, rgb(12, 7, 50) 100%);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            transition: background 0.6s;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 60px;
+            background: rgba(2, 2, 32, 0.96);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 14px 2px rgba(162, 87, 233, 0.08);
+            transition: background 0.6s;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease, letter-spacing 0.3s;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul li a:hover {
+            color: rgb(175, 175, 235);
+            letter-spacing: 2px;
+        }
+
+        .left {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: rgb(162, 87, 233);
+            letter-spacing: 1.5px;
+            text-shadow: 0 0 10px rgba(162, 87, 233, 0.15);
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 100px 0;
+            flex-wrap: wrap;
+            min-height: 60vh;
+            animation: fadeInUp 1.2s;
+        }
+
+        .leftSection {
+            font-size: 2.3rem;
+            max-width: 500px;
+        }
+
+        .leftSection div {
+            margin: 10px 0;
+        }
+
+        .rightSection img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 50%;
+            box-shadow: 0 0 25px rgba(162, 87, 233, 0.6);
+            border: 4px solid rgba(162, 87, 233, 0.16);
+            transition: box-shadow 0.5s;
+            background: rgb(10, 10, 42);
+        }
+
+        .rightSection img:hover {
+            box-shadow: 0 0 40px 8px rgba(162, 87, 233, 0.57);
+        }
+
+        .purple {
+            color: rgb(162, 87, 233);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        #element {
+            color: rgb(162, 87, 233);
+            font-weight: 600;
+            letter-spacing: 1.2px;
+        }
+
+        main hr {
+            background: #9c97f1;
+            margin: 40px auto;
+            border: 1px solid #9c97f1;
+            width: 80%;
+            opacity: 0.37;
+        }
+
+        /* Section Fade Effects */
+        section {
+            animation: fadeInScale 1.2s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(70px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.96);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* About */
+        .about {
+            max-width: 80vw;
+            margin: 100px auto;
+            text-align: center;
+            background: rgba(24, 13, 63, 0.27);
+            border-radius: 16px;
+            box-shadow: 0 0 14px 2px rgba(162, 87, 233, 0.13);
+            padding: 50px 8vw;
+            animation: fadeInScale 1.2s;
+        }
+
+        .about h1 {
+            font-size: 2.3rem;
+            margin-bottom: 20px;
+            color: rgb(162, 87, 233);
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            color: rgb(200, 200, 220);
+            line-height: 1.7;
+        }
+
+        /* Skills Section */
+        .skills {
+            max-width: 80vw;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        .skills h1 {
+            font-size: 2.3rem;
+            color: rgb(162, 87, 233);
+            margin-bottom: 35px;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill-badge {
+            background: rgba(162, 87, 233, 0.15);
+            border: 1px solid rgba(162, 87, 233, 0.4);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .skill-badge:hover {
+            background: rgb(162, 87, 233);
+            transform: translateY(-4px);
+            cursor: pointer;
+        }
+
+        /* Experience */
+        .secondSection {
+            max-width: 85vw;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        .secondSection h1 {
+            font-size: 2.3rem;
+            color: rgb(162, 87, 233);
+            margin-bottom: 40px;
+        }
+
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 60px;
+            padding-bottom: 60px;
+        }
+
+        .vertical {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 200px;
+            min-height: 200px;
+            background: linear-gradient(135deg, rgba(25, 10, 52, 0.22), rgba(48, 26, 111, 0.37));
+            border-radius: 10px;
+            padding: 20px 10px;
+            box-shadow: 0 0 14px rgba(162, 87, 233, 0.21);
+            transition: transform 0.3s, box-shadow 0.3s, background 0.4s;
+            cursor: pointer;
+            border: 2px solid rgba(162, 87, 233, 0.16);
+            position: relative;
+            overflow: hidden
+        }
+
+        .vertical:before {
+            content: '';
+            position: absolute;
+            width: 130%;
+            height: 48px;
+            left: -20%;
+            top: -22%;
+            background: linear-gradient(90deg, rgba(162, 87, 233, 0.35) 0%, rgba(162, 87, 233, 0.03) 100%);
+            pointer-events: none;
+            transition: opacity 0.4s;
+            opacity: 0.3;
+        }
+
+        .vertical:hover {
+            transform: translateY(-10px) scale(1.045);
+            box-shadow: 0 8px 45px 5px rgba(162, 87, 233, 0.20);
+            background: linear-gradient(135deg, rgba(48, 26, 111, 0.37) 0%, rgba(25, 10, 52, 0.19) 100%);
+            z-index: 1;
+        }
+
+        .vertical:hover:before {
+            opacity: 0.5;
+        }
+
+        .image-top {
+            width: 54px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            background: rgb(40, 14, 92);
+            padding: 5px;
+            box-shadow: 0 0 5px 2px rgba(162, 87, 233, 0.11);
+        }
+
+        .vertical-title {
+            font-weight: 600;
+            color: rgb(162, 87, 233);
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 1.13rem;
+        }
+
+        .vertical-desc {
+            font-size: 0.9rem;
+            color: rgb(200, 200, 220);
+            line-height: 1.4rem;
+            text-align: center;
+        }
+
+        /* Projects Section */
+        .projects {
+            max-width: 80vw;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        .projects h1 {
+            font-size: 2.3rem;
+            margin-bottom: 30px;
+            color: rgb(162, 87, 233);
+        }
+
+        .project-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+            gap: 27px;
+        }
+
+        .card {
+            background: linear-gradient(125deg, rgb(17, 14, 56) 70%, rgba(60, 31, 120, 0.23));
+            color: white;
+            padding: 30px 22px 20px 23px;
+            border-radius: 14px;
+            box-shadow: 0 0 20px 2px rgba(162, 87, 233, 0.24);
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            transition:
+                transform 0.35s cubic-bezier(.42, .3, .23, 1.17),
+                box-shadow 0.30s cubic-bezier(.42, .3, .23, 1.17);
+            min-height: 260px;
+        }
+
+        .card .project-icon {
+            font-size: 2.5rem;
+            position: absolute;
+            top: 24px;
+            right: 30px;
+            opacity: 0.12;
+            z-index: 0;
+            pointer-events: none;
+            transition: opacity 0.29s;
+        }
+
+        .card h3 {
+            margin-bottom: 13px;
+            color: rgb(162, 87, 233);
+            position: relative;
+            z-index: 1;
+            font-size: 1.23rem;
+            font-weight: 600;
+            text-shadow: 0 2px 14px rgba(162, 87, 233, 0.03);
+        }
+
+        .card p {
+            font-size: 0.97rem;
+            color: rgb(200, 200, 220);
+            line-height: 1.52;
+            z-index: 1;
+            position: relative;
+        }
+
+        .card:before {
+            content: "";
+            position: absolute;
+            bottom: -36px;
+            left: -40px;
+            width: 280px;
+            height: 60px;
+            background: linear-gradient(120deg, rgba(162, 87, 233, 0.17) 0%, transparent 100%);
+            filter: blur(0.5px);
+            z-index: 0;
+        }
+
+        .card:hover {
+            box-shadow: 0 12px 40px 0 rgba(162, 87, 233, 0.15);
+            transform: translateY(-10px) scale(1.05) rotate(-1.2deg);
+            background: linear-gradient(115deg, rgb(24, 13, 63) 60%, rgba(120, 87, 233, 0.13));
+        }
+
+        .card:hover .project-icon {
+            opacity: 0.21;
+            transform: scale(1.12) rotate(-9deg);
+        }
+
+        /* Contact */
+        .contact {
+            max-width: 80vw;
+            margin: 100px auto;
+            text-align: center;
+            background: rgba(24, 13, 63, 0.23);
+            border-radius: 11px;
+            box-shadow: 0 0 14px 2px rgba(162, 87, 233, 0.11);
+            padding: 48px 8vw 35px 8vw;
+        }
+
+        .contact h1 {
+            font-size: 2.3rem;
+            color: rgb(162, 87, 233);
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            color: rgb(200, 200, 220);
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            margin-top: 8px;
+            padding-bottom: 8px;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 17px;
+            font-size: 1.42rem;
+            text-decoration: none;
+            background: rgba(162, 87, 233, 0.14);
+            padding: 7px 12px 6px 11px;
+            border-radius: 7.5px;
+            border: 1.3px solid rgba(162, 87, 233, 0.19);
+            transition: color 0.3s, background 0.32s, transform 0.21s;
+            display: inline-block;
+            vertical-align: middle;
+            box-shadow: 0 2px 5px 2px rgba(162, 87, 233, 0.07);
+        }
+
+        .social-links a:hover {
+            color: rgb(162, 87, 233);
+            background: rgba(24, 13, 63, 0.46);
+            transform: scale(1.075);
+            border-color: rgb(162, 87, 233);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: rgb(2, 2, 32);
+            color: rgb(200, 200, 220);
+            font-size: 1rem;
+            letter-spacing: .75px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1050px) {
+            .firstSection {
+                flex-direction: column;
+                gap: 44px;
+                margin: 50px 0;
+            }
+        }
+
+        @media (max-width: 850px) {
+
+            .about,
+            .projects,
+            .contact,
+            .secondSection {
+                padding: 16px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .vertical {
+                width: 89%;
+            }
+
+            .about,
+            .projects,
+            .contact,
+            .secondSection {
+                max-width: 95vw;
+            }
+
+            .project-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 550px) {
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            .about,
+            .projects,
+            .contact,
+            .secondSection {
+                max-width: 99vw;
+                padding: 0 0;
+            }
+
+            .about,
+            .contact {
+                padding: 27px 2vw;
+            }
+
+            .project-cards {
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .vertical {
+                width: 100%;
+                min-width: 90vw;
+            }
+
+            .leftSection {
+                font-size: 1.35rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Sara’s Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Home -->
+        <section class="firstSection" id="home">
+            <div class="leftSection">
+                Hey there! I’m <span class="purple">Sara</span>
+                <div>& I'm a passionate —</div>
+                <span id="element"></span>
+            </div>
+
+            <div class="rightSection">
+                <img src="IMG-20251228-WA0069.jpg.jpeg" alt="Sara Amit Thakur" />
+            </div>
+        </section>
+        <hr />
+        <!-- About -->
+        <section class="about" id="about">
+            <h1>About Me</h1>
+            <p>
+                Hi! I'm <strong>Sara</strong>, a tech enthusiast and learner working on projects in Python, AI, ML, and
+                data science.
+                I love solving problems and growing my skills.<br /><br />
+                <a href="./Sara-Resume.pdf" download="Sara-Amit-Thakur-Resume.pdf"
+                    style="color:rgb(162,87,233); text-decoration:underline;">
+                    Download Resume
+                </a>
+            </p>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills" id="skills">
+            <h1>Skills</h1>
+
+            <div class="skills-container">
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">C++</span>
+                <span class="skill-badge">SQL</span>
+                <span class="skill-badge">Scikit-learn</span>
+                <span class="skill-badge">Pandas</span>
+                <span class="skill-badge">NumPy</span>
+                <span class="skill-badge">NLP</span>
+                <span class="skill-badge">Git</span>
+                <span class="skill-badge">GitHub</span>
+                <span class="skill-badge">Machine Learning</span>
+                <span class="skill-badge">Data Preprocessing</span>
+                <span class="skill-badge">Feature Engineering</span>
+                <span class="skill-badge">EDA</span>
+                <span class="skill-badge">Data Structures & Algorithms</span>
+                <span class="skill-badge">OOP</span>
+            </div>
+        </section>
+
+        <hr />
+        <!-- Experience -->
+        <section class="secondSection" id="experience">
+            <h1>Work & Projects Experience</h1>
+            <div class="box">
+
+                <div class="vertical">
+                    <img class="image-top" src="ML.webp" alt="ML logo" />
+                    <div class="vertical-title">Machine Learning Intern</div>
+                    <div class="vertical-desc">
+                        <strong>Techover Infotech & Productions</strong><br>
+                        May 2026 – Present<br><br>
+                        Built a Customer Churn Prediction model using Gradient Boosting with 88% precision. Worked on
+                        feature engineering, predictive analytics and business-focused ML solutions.
+                    </div>
+                </div>
+
+                <div class="vertical">
+                    <img class="image-top" src="Py logo.jpg" alt="Python logo" />
+                    <div class="vertical-title">Python Developer Intern</div>
+                    <div class="vertical-desc">
+                        <strong>Blue Eyed Digital Technologies Pvt. Ltd.</strong><br>
+                        Jun 2025 – Jul 2025<br><br>
+                        Developed a Student Record Management System using Python & SQLite with CRUD operations and
+                        built a Logistic Regression model for student performance prediction.
+                    </div>
+                </div>
+
+                <div class="vertical">
+                    <img class="image-top" src="AI logo.webp" alt="AI logo" />
+                    <div class="vertical-title">AI / ML Developer</div>
+                    <div class="vertical-desc">
+                        Hands-on experience in Machine Learning, Data Analysis, NLP, Feature Engineering, Model
+                        Evaluation and Predictive Analytics using Python and Scikit-learn.
+                    </div>
+                </div>
+
+                <div class="vertical">
+                    <img class="image-top" src="DA.webp" alt="Data Analytics logo" />
+                    <div class="vertical-title">Data Analyst</div>
+                    <div class="vertical-desc">
+                        Skilled in Data Cleaning, EDA, Visualization, Feature Scaling and deriving meaningful insights
+                        from real-world datasets.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <hr />
+        <!-- Projects -->
+        <section class="projects" id="projects">
+            <h1>My Projects</h1>
+            <div class="project-cards">
+
+                <div class="card">
+                    <i class="project-icon fa-solid fa-heart-pulse" style="color:rgb(162,87,233);"></i>
+
+                    <h3>Cancer Detection using Machine Learning</h3>
+
+                    <p>
+                        Developed a cancer classification system using Logistic Regression and Support Vector Machine
+                        (SVM), achieving nearly 90–92% accuracy.
+                        Optimized performance using GridSearchCV and evaluated models using Accuracy, Precision, Recall
+                        and Confusion Matrix.
+                        <br><br>
+                        <strong>Tech Stack:</strong> Python, Pandas, NumPy, Scikit-learn, Matplotlib.
+                    </p>
+                </div>
+
+
+                <div class="card">
+                    <i class="project-icon fa-solid fa-credit-card" style="color:rgb(162,87,233);"></i>
+
+                    <h3>Credit Card Fraud Detection</h3>
+
+                    <p>
+                        Built a machine learning model using Logistic Regression for fraud detection with around 88–90%
+                        precision.
+                        Performed preprocessing, handled class imbalance using sampling techniques and analyzed over
+                        10,000 transactions.
+                        <br><br>
+                        <strong>Tech Stack:</strong> Python, Pandas, NumPy, Scikit-learn.
+                    </p>
+                </div>
+
+
+                <div class="card">
+                    <i class="project-icon fa-solid fa-shield-halved" style="color:rgb(162,87,233);"></i>
+
+                    <h3>Deepfake Detection System</h3>
+
+                    <p>
+                        AI-powered system for detecting manipulated images and videos using multimodal analysis
+                        including facial inconsistencies, metadata and media verification techniques.
+                    </p>
+                </div>
+
+
+                <div class="card">
+                    <i class="project-icon fa-solid fa-database" style="color:rgb(162,87,233);"></i>
+
+                    <h3>Student Record Management System with Predictive Analytics</h3>
+
+                    <p>
+                        Developed during my Python internship using Python and SQLite.
+                        Supports CRUD operations and predicts student performance using Logistic Regression with data
+                        preprocessing using Pandas and NumPy.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <hr />
+        <!-- Contact -->
+        <!-- ...the rest of your code remains unchanged... -->
+        <section class="contact" id="contact">
+            <h1>Contact Me</h1>
+            <p>I'd love to connect! Reach me via email, LinkedIn, or GitHub below.</p>
+            <div class="social-links">
+                <a href="mailto:sarathakur1003@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i> Email</a>
+                <a href="https://www.linkedin.com/in/sara-amit-thakur-55981a32a" target="_blank"><i
+                        class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/SaraThakur10" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+        </section>
+        <!-- ...the rest of your code remains unchanged... -->
+
+    </main>
+    <footer>
+        © 2025 Sara | Designed & Developed by Sara
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Python Developer', 'Problem Solver', 'Innovator', 'ML Engineer', 'AI Enthusiast'],
+            typeSpeed: 43,
+            backSpeed: 22,
+            loop: true
+        });
+        // Card reveal animation (optional, just for project cards fade-up on scroll)
+        document.addEventListener('DOMContentLoaded', function () {
+            var cards = document.querySelectorAll('.card');
+            var options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.17
+            }
+            var revealOnScroll = function (entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = "translateY(0) scale(1)";
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+            var observer = new IntersectionObserver(revealOnScroll, options);
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = "translateY(60px) scale(0.96)";
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+
+</html>
